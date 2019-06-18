@@ -1,0 +1,14 @@
+#following is the code to implement Truck Tour problem in problem solving section og HackerRank
+
+
+def truckTour(petrolpumps):
+    temp = 0
+    q =[]
+    for f,d in petrolpumps: // elements of 2D matrix petrolpumps
+        temp = temp + (f-d)
+        q.append(temp)     //appending the diffrence of amount of petrol & distance of next pertrol pump
+    pos = q.index(min(q)) // finding the minimum element of q because after the lowest elemen there has to be a positive element from where the journey could begin and isn't interrupted byany large negative no.
+    if pos == len(petrolpumps)-1:
+        return(0)
+    else:
+        return(pos + 1)
