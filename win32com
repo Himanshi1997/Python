@@ -1,0 +1,21 @@
+While working to manipulate recycle bin, you would require winshell module.
+However, while running the script I met with an error : : "" ModuleNotFoundError: No module named 'win32con' ""
+
+In order to get it processed sucessfully,  an extra module named pywin32 has to be involved other than winshell.
+
+just run the following command in you cmd:
+
+** python install pywin32 **    (without astresic)
+
+However after running this command, an error showing "" Could not find a version that satisfies the requirement <from versions pywin32 : > 
+
+No matching distribution found for pywin32 "" exits, it could be due to incompatible versions of python and pywin32.
+
+Solution is to check the versions accordingly and try to reinstall the compatible one.
+
+
+
+
+
+
+
