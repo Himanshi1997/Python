@@ -1,0 +1,38 @@
+This isn't simple as it seems.
+You might have tried to change the extension of .py file to .exe file, but didn't find the anticipated output?
+
+So you are on write track. From here I will guide you to achieve the required output.
+
+On command prompt run the following queries:-
+
+1. Run following command
+    
+    "python --version" (without inverted commas)
+    
+   to get the current version of intsalled python in your device.
+
+2. If you get the version displayed, then you are on right path else if an error occured, then pl install python again.
+
+3. Now run 
+
+    "pip --version" 
+    
+   to ensure the installation of pip,if you get an error, install pip.
+   
+4. Now run 
+
+    "pip install pyinstaller",  
+    
+   this module named pyinstaller would help you to change your py file to exe file.
+
+
+5. Once it has get installed, run the following command:
+
+    pyinstaller --onefile <file path>       # <--onefile> is optional in case you need on single file
+    
+    for eg: 
+    
+    pyinstaller --onefile C:/users/admin/desktop/py_module.py
+    
+ 6. This .py file would then be converted to .exe file in C:/users/admin/dist
+ 
