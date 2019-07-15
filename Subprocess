@@ -1,0 +1,46 @@
+Traditional Definition:------------->
+Subprocess allows developer to spawn process,connect to their input/output/error pipes and obtain their return codes. 
+Basically you can run application and  avail their output in python.
+
+
+import subprocess   //call to subprocess module
+
+There are various methods provided by subprocess module, like to call() value, check output() etc.
+I have applicated check_output here.
+
+
+I used subprocess to run command lines inorder to retrieve passwords of wifi networks your device ever connected to.
+
+For running command prompt through python, pass the arguments as a List of Strings OR by setting the shell argument to a True value.
+
+Ex:- subprocess.call(['df','-h'])     // so there is a command in cmd as df -h
+
+                OR
+                
+     subprocess.call('du-hs $ HOME', shell = True)
+     
+     
+ My code to retrieve passwords of wifi networks your device ever connected to :----------------->
+
+''''
+
+
+
+import subprocess
+
+data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8').split('\n')
+profiles = [i.split(":")[1][1:-1] for i in data if "All User Profile" in i]
+for i in profiles:
+    results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i, 'key=clear']).decode('utf-8').split('\n')
+    results = [b.split(":")[1][1:-1] for b in results if "Key Content" in b]
+    try:
+        print ("{:<30}|  {:<}".format(i, results[0]))
+    except IndexError:
+        print ("{:<30}|  {:<}".format(i, ""))
+input("")
+
+
+''''
+You may run "netsh wlan show profiles" on cmd to get similar details.
+
+Hope it help you at some extend.
