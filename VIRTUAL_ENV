@@ -1,0 +1,31 @@
+VIRTUAL ENVIRONMENT
+___________________
+___________________
+
+A virtual environment is a tool used to keep dependencies required by different projects by creating seprate isolated python virtual 
+environment for them.
+
+Following is the code to initialise Virtual Environment.
+
+Open your terminal/cmd:
+
+$ pip install virtualenv
+
+//create virtualenv
+
+$ virtualenv *my_name*
+
+A repository will be created named "my_name"
+
+//activate the virtual env
+
+$ path/Scripts/activate.bat
+
+IN path, provide the path of your created virtualenv with name "my_name" in C drive.
+
+Now you may perform your suitable modulation like installing library etc in the virtualenv which won't affect your local system.
+
+//Deactivate the env
+
+(my_name)$ deativate
+
