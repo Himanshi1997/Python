@@ -1,0 +1,75 @@
+HEY!
+Hope you are doing well with python!
+
+
+WELL here I come with the mini code for sending sms/mms or calling through python.
+In this mini project following modules will be used:
+
+1. VIRTUAL ENV
+   -Don't panic in case Virtual Env is a new term for you. You may refer my VIRTUAL_ENV file in python repository for the same.
+    
+2. TWILIO
+   -Twilio is a SMS web API, we will connect our python to this API for sending messages. You may choose other API also.
+    
+Before proceeding, create your free account on Twilio : https://www.twilio.com/try-twilio.(in case if you are opting twilio)
+Also, generate your phone number to test your API provided by twilio(discussed further).
+
+
+STEP:1
+________
+________
+
+CREATE  a VIRTUAL environment for your project first.
+It is a good habit to create one for any project.
+
+One your terminal or cmd and run following command:-------------->
+
+$ virtualenv sendsms                      // this would create a repository in C drive named sendsms
+$ path/sendsms/Scripts/activate.bat
+
+STEP:2
+_______
+_______
+
+Install the twilio module.--------------------------------------->
+
+
+(sendsms)$ pip install twilio
+
+
+STEP:3
+_______
+_______
+
+Till it is installing, open your python editor and write the following code:------------------------------------->
+
+
+from twilio.rest import Client
+
+// enter your Account ID and Auth Token, provided by twilio when you create an account.Go to settings in your twilio acc,and 
+   choose General
+client = Client("ACc**************************************","4c**************************************")
+
+// Enter your_verified_no as the no you entered while signing up.
+// Enter the provided_no by twilio.
+// Enter an intended message.
+client.messages.create(to ="you_verified_no",
+                      from_ = "provided_test_no",
+                      body = "Hello Python here!")
+Save you python file.
+In case an error occurs showing no such module named "twilio', just ignore it.
+Paste the python file in the repository you created sendsms.
+
+
+STEP:4
+______
+______
+
+Open the terminal/cmd, continue from where you left it.
+Set the path of your python file existing in your virtual env.
+Press Enter
+
+And you will recieve a message on your verified phn no.!
+
+
+
